@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GreenBasket</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body style="padding-top:2%;">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Humberger Begin -->
+   
+   
+    <!-- Hero Section Begin -->
+    <section class="hero hero-normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>All Categories</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">BAKING NEEDS</a></li>
+                            <li><a href="#">FRZN PREPRD SFD</a></li>
+                            <li><a href="#">POULTRY FRESH</a></li>
+                            <li><a href="#">VEGETABLE FRESH</a></li>
+                            <li><a href="#">PORK FRESH</a></li>
+                            <li><a href="#">CHEESE</a></li>
+                            <li><a href="#">POULTRY FROZEN</a></li>
+                            <li><a href="#">CONVENIENCE PRD</a></li>
+                            <li><a href="#">IMPORT SPECLTY</a></li>
+                            <li><a href="#">BEEF FRESH</a></li>
+                            <li><a href="#">MAINTENANCE SUP</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Checkout</h2>
+                        <div class="breadcrumb__option">
+                            <a href="/">Home</a>
+                            <span>Checkout</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container-fluid">
+            <div class="checkout__form">
+                <h4>Recommendations</h4>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6 d-flex flex-wrap">
+                            <% if(productList.length>0){ %>
+                                 <% for (var i=0;i<productList.length;i++) { %>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                                        <div class="featured__item" id= " <%= productList[i] %> ">
+                                            <div class="featured__item__pic set-bg" data-setbg="data:image/png;base64,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">
+                                                <ul class="featured__item__pic__hover">
+                                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                                    <li onclick="addToCart('<%= productList[i] %>','<%= priceList[i] %>')"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="featured__item__text">
+                                                <span><%= productList[i] %></span>
+                                                  <% for(key in categories.data[0]){ %>
+                                                    <%  if(categories.data[0][key.toString()].includes(productList[i])){ %>
+                                                        <br>
+                                                        <span style="color:grey"><%= key.toString() %></span>
+                                                        <% break; %>
+                                                    <% } %>
+                                                <% } %>
+                                                <h5>$ <%= priceList[i] %></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            <% }%>
+                            <% if(productList.length>0 == false){ %>
+                                <% for (var i=0;i<itemList.length;i++) { %>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                                        <div class="featured__item" id= " <%= productList[i] %> ">
+                                            <div class="featured__item__pic set-bg" data-setbg="data:image/png;base64,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">
+                                                <ul class="featured__item__pic__hover">
+                                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                                    <li onclick="addToCart('<%= itemList[i] %>','<%= priceList[i] %>')"><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="featured__item__text">
+                                                <span><%= itemList[i] %></span>
+                                                  <% for(key in categories.data[0]){ %>
+                                                    <%  if(categories.data[0][key.toString()].includes(itemList[i])){ %>
+                                                        <br>
+                                                        <span style="color:grey"><%= key.toString() %></span>
+                                                        <% break; %>
+                                                    <% } %>
+                                                <% } %>
+                                                <h5>$ <%= priceList[i] %></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            <% } %>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4>Your Order</h4>
+                                <div class="checkout__order__products">Products <span>Total</span></div>
+                                <ul>
+                                    <% for (var i=0;i<itemList.length;i++) { %>
+                                    <li><%= itemList[i] %><span>$<%= priceList[i] %></span></li>
+                                    <% } %>
+                                </ul>
+                                <button type="submit" class="site-btn">PLACE ORDER</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+ 
+
+</body>
+
+</html>
