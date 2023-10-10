@@ -3,6 +3,7 @@ const app = express()
 const fs = require('fs');
 const csv = require('csv-parser');
 const bodyParser = require('body-parser'); 
+const customer_brands = require("./customer_product_brands.json")
 
 
 app.use(express.static('public'))
@@ -17,9 +18,11 @@ const port = process.env.PORT || 3000; // Use port 3000 if PORT is not defined
 
 
 
+
+
 // Specify the path to your CSV file
 const csvFilePath = './brands.csv';
-const new_product_list = []
+var new_product_list = []
 const dataArray = [];
 const priceArray = [];
 const customer_id = [];
@@ -112,7 +115,12 @@ app.get('/',function(req,res){
 app.get('/home',function(req,res){
   var id = req.query.id
   if(customer_id.includes(id)){
-    console.log(new_product_list)
+    for(key in customer_brands){
+      if(customer_brands[key].customer_label.toString()==id.toString()){
+        new_product_list = customer_brands[key].product_brand
+        break;
+      }
+    }
     const data  = {
         productList :new_product_list,
         priceList:priceArray,
